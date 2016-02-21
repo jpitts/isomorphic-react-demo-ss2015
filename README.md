@@ -31,19 +31,19 @@ One key configuration that is required in order to login is to set GOOGLE_CLIENT
 
 If it is run on a modern unix system, this demo contains all of what you need to edit code, to run redis, and to run the web stack.
 
-## To generate a convenient screen session in a terminal where your code will be edited:
+## Start a dev screen session in a terminal:
 
 ```
 ./devel/bin/start_dev_screens.sh
 ```
 
-## To run redis:
+## Start redis:
 
 ```
 ./vendor/redis/bin/run-redis.sh
 ```
 
-## To run node in development mode:
+## Start the app in dev mode:
 
 ```
 node devel.js
@@ -181,7 +181,7 @@ This remains to be seen.
 
 Packing files together that have different functional roles may seem inconsistent. The lack of a directory hierarchy means that the underlying structure of the application may be harder to guess at. Developers may be too free to create strange naming conventions. 
 
-Any of these factors can make developers anxious or morose.
+Any of these factors can make developers sad.
 
 
 # Node Module Dependencies
