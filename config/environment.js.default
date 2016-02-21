@@ -1,0 +1,13 @@
+exports.config = {
+  port: 8080,
+  COOKIE_SECRET: 'demo',
+  REDIS_SESSIONS_HOST: 'localhost',
+  REDIS_SESSIONS_PORT: 6379,
+  REDIS_SESSIONS_AUTH: '',
+  SESSION_SECRET: 'demo',
+  SESSION_NAME: 'demo.sid',
+  GOOGLE_CLIENT_ID: 'ENTER_CLIENT_ID',
+  GOOGLE_CLIENT_SECRET: 'ENTER_CLIENT_SECRET',
+  GOOGLE_REDIRECT_URL: 'http://localhost:8080/auth/redirect'
+};
+

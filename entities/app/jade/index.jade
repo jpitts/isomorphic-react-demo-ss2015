@@ -1,0 +1,21 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    //link(rel='icon', href='/images/favicons/favicon.ico')
+    title Isomorphic Node-Express-React-Bootstrap Demo App
+    link(rel='stylesheet', href='/vendor/bootstrap-3.3.2/dist/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/css/style.css')
+
+    body
+      div(id="react-main-mount")!= reactOutput
+    
+      script(src="/js/jquery/jquery-2.2.0.js")
+      script(src="/js/isomorphic-react-demo-ss2015/client.js")
+
+      script.
+        DEMO.#{entityType}.init({ })
+
+

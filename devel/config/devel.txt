@@ -1,0 +1,27 @@
+
+Welcome to the jpitts-nodereact screen session!
+
+You are now in the screen session. Try this command to navigate:
+ctrl-a "
+
+Screens that have been set up for you:
+
+screen 0 notes
+screen 1 git
+screen 2 bash
+screen 3 config
+screen 4 server
+screen 5 ent-app
+screen 6 ent-auth
+screen 7 ent-foyer
+screen 8 ent-workspace
+screen 9 ent-user
+screen 10 css
+screen 11 bash
+
+For help navigating screen, look under "Window Management" in:
+http://aperiodic.net/screen/quick_reference
+
+To stop the devel session:
+./devel/bin/stop_dev_screens.sh
+
