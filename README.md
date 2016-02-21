@@ -2,6 +2,8 @@
 
 Demo web stack using node.js, express, isomorphic react. The modules used were fashionable in Spring/Summer 2015.
 
+Note: currently under development, not yet ready for use!
+
 # Installation
 
 This demo was developed using node v0.12.4. You may want to use [creationix/nvm](https://github.com/creationix/nvm) to run this version of node.
@@ -20,30 +22,30 @@ npm install
 ./vendor/redis/bin/install-redis.sh
 ```
 
-## Configure
+## Create A Config File
 
 Copy the config/environment.js.default to config/development.js or other environments as needed.
 
-One key configuration that is required in order to login is to set GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRE after setting up your [Google OAuth2](https://developers.google.com/identity/protocols/OAuth2) access.
+One key configuration that is required in order to login is to set GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET after setting up your [Google OAuth2](https://developers.google.com/identity/protocols/OAuth2) access.
 
 
 # Developing
 
 If it is run on a modern unix system, this demo contains all of what you need to edit code, to run redis, and to run the web stack.
 
-## Start a dev screen session in a terminal:
+## Edit Files:
 
 ```
 ./devel/bin/start_dev_screens.sh
 ```
 
-## Start redis:
+## Start Redis:
 
 ```
 ./vendor/redis/bin/run-redis.sh
 ```
 
-## Start the app in dev mode:
+## Start In Development Mode:
 
 ```
 node devel.js
@@ -216,7 +218,7 @@ app.js
 
 In this case, the developer would be primarily editing files in one directory. When an entity component must interact with another entity, it is very clear when that line is being crossed.
 
-[Cross-cutting concerns](https://en.wikipedia.org/wiki/Cross-cutting_concern) might be better understood within a COP app. The author is not yet certain about that, but intuitively it seems so.
+[Cross-cutting concerns](https://en.wikipedia.org/wiki/Cross-cutting_concern) might be better understood within a COP app. The author is not yet certain about this, but intuitively it seems so.
 
 ## Advantages of Concern-Oriented Programming
 
