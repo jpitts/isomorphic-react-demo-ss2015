@@ -86,6 +86,67 @@ This demoware is dated, the fashion of yesteryear. Beware: they will mock you in
 [Virtual DOM and diffing algorithm](https://gist.github.com/Raynos/8414846)
 
 
+## Concern-Oriented Programming (COP)
+
+This is an idea that the author has been exploring. Read the [special note about the application structure](#a-special-note-about-application-structure) to find out more.
+
+
+# Node Module Dependencies
+
+## Gulp
+
+Gulp is used to rebuild the client js file, including server-side React JSX rendering.
+
+[gulp](https://github.com/gulpjs/gulp)
+
+[gulp getting started guide](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md)
+
+
+## Express
+
+[expressjs](https://github.com/expressjs/express)
+
+
+## Passport
+
+[jaredhanson/passport](https://github.com/jaredhanson/passport/tree/v0.2.2)
+
+[passport-google-oauth2](https://github.com/jaredhanson/passport-google-oauth2)
+
+
+## Jade
+
+[pugjs/jade 0.34.1](https://github.com/pugjs/jade/tree/0.34.1)
+
+Note: this is a very old version of Jade and will soon be updated to something more recent.
+
+
+## React
+
+[facebook/react v0.13.3](https://github.com/facebook/react/tree/v0.13.3)
+
+[reactify v0.15.2](https://github.com/andreypopp/reactify/tree/v0.15.2)
+
+[petehunt/node-jsx v0.13.3](https://github.com/petehunt/node-jsx/tree/169d038c398d70ac507aa63ba54a5dd00559f370)
+
+Note: Pete Hunt has deprecated petehunt/node-jsx in favor of [Meettya/node-jsx-babel](https://github.com/Meettya/node-jsx-babel), a fork that targets React v0.14. This demo targets React v0.13, and therefore uses petehunt/node-jsx. A future version of this demo will use Meettya/node-jsx-babel.
+
+
+## Bootstrap
+
+[twbs/bootstrap](https://github.com/twbs/bootstrap)
+
+[react-bootstrap v0.26.4](https://github.com/react-bootstrap/react-bootstrap/tree/v0.26.4)
+
+# Credit
+
+The "Isomorphic React" aspect of this demo is based on [davidwells/isomorphic-react-example](https://github.com/DavidWells/isomorphic-react-example). Special thanks to [David Wells](https://github.com/DavidWells/)!
+
+# Contributors
+
+Created and maintained by Jamie Pitts.
+
+
 # A Special Note About Application Structure
 
 The code of this demo is organized around developer concerns, embodied in entities like users and items. This is in contrast to organizing around technical concerns such as controllers, routes, models, etc). 
@@ -96,7 +157,7 @@ This structure is called Concern-Oriented Programming, the culmination of years 
 
 The key idea behind COP is that code structure should follow "who" and "what" the app is built for, as opposed to "how" the app works. In a COP app, an entity directory would contain all client, server, and data model code relating to that general concern. This essentially flattens the file structure.
 
-In common code structuring, web app directories and file naming say a lot about the role of the code therein. As more code is added to handle new developer concerns, the repo becomes cluttered with numerous directories.  
+In common code structuring, web app directories and file naming say a lot about the role of the code therein. As more code is added to handle new developer concerns, the repo becomes cluttered with numerous, unrelated files.  
 
 [](https://en.wikipedia.org/wiki/Cross-cutting_concern)
 
@@ -184,59 +245,5 @@ Packing files together that have different functional roles may seem inconsisten
 Any of these factors can make developers sad.
 
 
-# Node Module Dependencies
-
-## Gulp
-
-Gulp is used to rebuild the client js file, including server-side React JSX rendering.
-
-[gulp](https://github.com/gulpjs/gulp)
-
-[gulp getting started guide](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md)
-
-
-## Express
-
-[expressjs](https://github.com/expressjs/express)
-
-
-## Passport
-
-[jaredhanson/passport](https://github.com/jaredhanson/passport/tree/v0.2.2)
-
-[passport-google-oauth2](https://github.com/jaredhanson/passport-google-oauth2)
-
-
-## Jade
-
-[pugjs/jade 0.34.1](https://github.com/pugjs/jade/tree/0.34.1)
-
-Note: this is a very old version of Jade and will soon be updated to something more recent.
-
-
-## React
-
-[facebook/react v0.13.3](https://github.com/facebook/react/tree/v0.13.3)
-
-[reactify v0.15.2](https://github.com/andreypopp/reactify/tree/v0.15.2)
-
-[petehunt/node-jsx v0.13.3](https://github.com/petehunt/node-jsx/tree/169d038c398d70ac507aa63ba54a5dd00559f370)
-
-Note: Pete Hunt has deprecated petehunt/node-jsx in favor of [Meettya/node-jsx-babel](https://github.com/Meettya/node-jsx-babel), a fork that targets React v0.14. This demo targets React v0.13, and therefore uses petehunt/node-jsx. A future version of this demo will use Meettya/node-jsx-babel.
-
-
-## Bootstrap
-
-[twbs/bootstrap](https://github.com/twbs/bootstrap)
-
-[react-bootstrap v0.26.4](https://github.com/react-bootstrap/react-bootstrap/tree/v0.26.4)
-
-# Credit
-
-The "Isomorphic React" aspect of this demo is based on [davidwells/isomorphic-react-example](https://github.com/DavidWells/isomorphic-react-example). Special thanks to [David Wells](https://github.com/DavidWells/)!
-
-# Contributors
-
-Created and maintained by Jamie Pitts.
 
 
