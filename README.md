@@ -71,6 +71,8 @@ This demoware is dated, the fashion of yesteryear. Beware: they will mock you in
 
 [The future of web apps is — ready? — isomorphic JavaScript](http://venturebeat.com/2013/11/08/the-future-of-web-apps-is-ready-isomorphic-javascript/)
 
+[Serverside React Rendering: Isomorphic JavaScript with ReactJS + Node](http://reactjsnews.com/isomorphic-javascript-with-react-node/) by David Wells, who created an important [example app](https://github.com/DavidWells/isomorphic-react-example) that parts of this demo are based on.
+
 
 ## Unidirectional Dataflow and Immutable Data
 
@@ -163,22 +165,26 @@ Three main advantages come from loosely structuring the app around entities:
 
 This helps new developers figure things out more quickly, and reduces the costs of maintenance. 
 
-### 2. Code organized by entity makes it easier for developers to divide up work on a project.
+### 2. Developers can divide up work on a project.
 
 Agreeing to boundaries in an app and code commits are also simplified.
 
-### 3. Code organized by entity allows parts of the app to be more easily shared. 
+### 3. Parts of the app can be more easily shared. 
 
-For example, a user entity that uses Express 4 / jade / React can be checked out into another project that also uses Express 4 / jade / React. In time, it may even be possible to use some json describe how an entity's components may depend on other entities, and even incorporate versioning.
+For example, a user entity that depends on Express 4 / jade / React can be checked out into another project that depends on the same modules. In the future, json can describe how one entity's components may depend on another entity's components, and incorporate versioning.
 
-### Bonus: It may be easier to create microservices out of individual entities. This remains to be seen.
+### Bonus: It may be easier to create microservices out of individual entities. 
+
+This remains to be seen.
 
 ## Possible Objections to COP
 
-Packing files together that have different functional roles may seem inconsistent. The lack of a directory hierarchy means that the underlying structure of the application may be harder to guess at. Developers may be too free to create strange naming conventions. Any of these factors can make developers anxious or morose.
+Packing files together that have different functional roles may seem inconsistent. The lack of a directory hierarchy means that the underlying structure of the application may be harder to guess at. Developers may be too free to create strange naming conventions. 
+
+Any of these factors can make developers anxious or morose.
 
 
-# Node Module Dependencie Dependencies
+# Node Module Dependencies
 
 ## Gulp
 
@@ -224,6 +230,10 @@ Note: Pete Hunt has deprecated petehunt/node-jsx in favor of [Meettya/node-jsx-b
 [twbs/bootstrap](https://github.com/twbs/bootstrap)
 
 [react-bootstrap v0.26.4](https://github.com/react-bootstrap/react-bootstrap/tree/v0.26.4)
+
+# Credit
+
+The "Isomorphic React" aspect of this demo is based on [davidwells/isomorphic-react-example](https://github.com/DavidWells/isomorphic-react-example). Special thanks to [David Wells](https://github.com/DavidWells/)!
 
 # Contributors
 
