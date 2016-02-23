@@ -14,7 +14,19 @@ This demo was developed using node v0.12.4. You may want to use [creationix/nvm]
 npm install
 ```
 
+## Install Mongodb
+
+Mongodb is the default db for sessions and for the app data model.
+
+```
+./vendor/mongodb/bin/download-mongodb.sh
+
+./vendor/mongodb/bin/install-mongodb.sh
+```
+
 ## Install Redis
+
+Redis can be used as the db for sessions, but mongodb must be run for the app data model.
 
 ```
 ./vendor/redis/bin/download-redis.sh
@@ -31,7 +43,7 @@ One key configuration that is required in order to login is to set GOOGLE_CLIENT
 
 # Developing
 
-If it is run on a modern unix system, this demo contains all of what you need to edit code, to run redis, and to run the web stack.
+If it is run on a modern unix system, this demo contains all of what you need to edit code, to run mongodb and redis, and to run the web stack.
 
 ## Edit Files:
 
@@ -39,10 +51,16 @@ If it is run on a modern unix system, this demo contains all of what you need to
 ./devel/bin/start_dev_screens.sh
 ```
 
+## Start Mongodb:
+
+```
+./vendor/mongodb/bin/start-mongodb.sh
+```
+
 ## Start Redis:
 
 ```
-./vendor/redis/bin/run-redis.sh
+./vendor/redis/bin/start-redis.sh
 ```
 
 ## Start In Development Mode:
@@ -105,7 +123,9 @@ This demoware is dated, the fashion of yesteryear. Beware: they will mock you in
 This is an idea that the author has been exploring. Read the [special note about the application structure](#a-special-note-about-application-structure) to find out more.
 
 
-# Node Module Dependencies
+# Node Modules
+
+What happened in S/S 2016? Well the node_modules season was très mémorable in SF and in SV. Lots of blue, lots of feathers. Lots of dudes in their hoodies reluctantly entering ther 30s, needing to lose some pounds. React continued to stomp the scene, her heel finally ripped off Angular's ornate train. But Angular still hasn't given up. Not caring, the audience went gaga for Isomorphic (even if troubled and confused about the term). Combining React with Isomorphic was both risqué and inevitable, so that happened. Adding Bootstrap to the hot mix was welcoming a well-known cougar into the den. Etc. etc.
 
 ## Gulp
 
@@ -120,20 +140,21 @@ Gulp is used to rebuild the client js file, including server-side React JSX rend
 
 [expressjs](https://github.com/expressjs/express)
 
+### Sessions with Mongodb
+
+[connect-mongo v0.8.2](https://github.com/kcbanner/connect-mongo/tree/f1f7a09fb58e27e0f5472daaf40c92f112a39f4e)
 
 ## Passport
 
-[jaredhanson/passport](https://github.com/jaredhanson/passport/tree/v0.2.2)
+[jaredhanson/passport v0.2.2](https://github.com/jaredhanson/passport/tree/v0.2.2)
 
 [passport-google-oauth2](https://github.com/jaredhanson/passport-google-oauth2)
-
 
 ## Jade
 
 [pugjs/jade 0.34.1](https://github.com/pugjs/jade/tree/0.34.1)
 
 Note: this is a very old version of Jade and will soon be updated to something more recent.
-
 
 ## React
 
@@ -144,7 +165,6 @@ Note: this is a very old version of Jade and will soon be updated to something m
 [petehunt/node-jsx v0.13.3](https://github.com/petehunt/node-jsx/tree/169d038c398d70ac507aa63ba54a5dd00559f370)
 
 Note: Pete Hunt has deprecated petehunt/node-jsx in favor of [Meettya/node-jsx-babel](https://github.com/Meettya/node-jsx-babel), a fork that targets React v0.14. This demo targets React v0.13, and therefore uses petehunt/node-jsx. A future version of this demo will use Meettya/node-jsx-babel.
-
 
 ## Bootstrap
 
