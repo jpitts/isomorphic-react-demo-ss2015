@@ -20,4 +20,9 @@ vendor/redis/redis-*
 vendor/redis/downloads/redis-*/*
 vendor/redis/install/*
 
+vendor/mongodb/mongodb-*
+vendor/mongodb/downloads/mongodb-*
+vendor/mongodb/install/mongodb-*
+vendor/mongodb/var/mongodb-data/*
+
 config/*.js

@@ -1,9 +1,14 @@
 exports.config = {
   port: 8080,
   COOKIE_SECRET: 'demo',
-  REDIS_SESSIONS_HOST: 'localhost',
-  REDIS_SESSIONS_PORT: 6379,
-  REDIS_SESSIONS_AUTH: '',
+  /*
+  SESSION_STORE: 'RedisStore',
+    REDIS_SESSION_HOST: 'localhost',
+    REDIS_SESSION_PORT: 6379,
+    REDIS_SESSION_AUTH: '',
+  */
+  SESSION_STORE: 'MongoStore',
+    MONGODB_SESSION_URL: 'mongodb://localhost/',
   SESSION_SECRET: 'demo',
   SESSION_NAME: 'demo.sid',
   GOOGLE_CLIENT_ID: 'ENTER_CLIENT_ID',

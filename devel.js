@@ -36,7 +36,7 @@ var child = new (forever.Monitor)('app.js', {
 
   env: {
     'NODE_ENV': (process.env.NODE_ENV ? process.env.NODE_ENV : 'development'),
-    //'APP_ENABLE_ISOREACT': false
+    'APP_ENABLE_ISOREACT': (process.env.APP_ENABLE_ISOREACT ? process.env.APP_ENABLE_ISOREACT : false),
   },
   
   // watch files for changes

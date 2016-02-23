@@ -27,8 +27,8 @@ var app = express();
 // enable isomorphic react
 app.set('enable_isoreact', (process.env.APP_ENABLE_ISOREACT == 'false' ? false : true) );
 
-console.log('Service running in ' + process.env.NODE_ENV + ' mode.')
-console.log('Service running with ISOREACT=' + app.get('enable_isoreact') + '.')
+console.log('Service running with NODE_ENV=' + process.env.NODE_ENV + '.')
+console.log('Service running with APP_ENABLE_ISOREACT=' + app.get('enable_isoreact') + '.')
 
 // load configs
 var config;

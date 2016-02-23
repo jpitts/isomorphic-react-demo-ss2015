@@ -51,7 +51,19 @@ If it is run on a modern unix system, this demo contains all of what you need to
 node devel.js
 ```
 
-Take note that the files are being watched in order to rebuild client javascript and to restart the web service.
+Note 1: Isomorphic mode is disabled by default in dev mode, allowing for React debugging to occur in the client.
+
+Note 2: the files are being watched in order to rebuild client javascript and to restart the web service.
+
+
+
+## Start In Production Mode:
+
+```
+node app.js
+```
+
+Note 1: Isomorphic mode is enabled by default, meaning that React is rendered on the server-side, and then re-rendered once React is initialized in the client.
 
 
 # Overview

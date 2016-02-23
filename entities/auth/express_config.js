@@ -1,6 +1,5 @@
 var cookieParser = require('cookie-parser')
   , session = require('express-session')
-  , RedisStore = require('connect-redis')(session)
   , passport = require('passport')
   , GoogleStrategy = require('passport-google-oauth20').Strategy
 ;
@@ -28,25 +27,50 @@ module.exports = {
 
 
     // express session configuration
+    // ----------------------------------------------------
     
     app.use(cookieParser(config.COOKIE_SECRET));
+    
+    // redis-based session
+    if (config.SESSION_STORE == 'RedisStore') {
+    
+      var RedisStore = require('connect-redis')(session);
 
-    app.use(session({
-      store: new RedisStore({
-        port: config.REDIS_SESSIONS_PORT,
-        host: config.REDIS_SESSIONS_HOST,
-        auth_pass: config.REDIS_SESSIONS_AUTH
-      }),
-      secret: config.SESSION_SECRET,
-      name: config.SESSION_NAME,
-      cookie: { maxAge: 86400 * 365 * 10 * 1000, path: '/' },
-      resave: true,
-      saveUninitialized: true
-    }));
+      app.use(session({
+        resave: true,
+        saveUninitialized: true,
+        secret: config.SESSION_SECRET,
+        name: config.SESSION_NAME,
+        cookie: { maxAge: 86400 * 365 * 10 * 1000, path: '/' },
+        store: new RedisStore({
+          port: config.REDIS_SESSION_PORT,
+          host: config.REDIS_SESSION_HOST,
+          auth_pass: config.REDIS_SESSION_AUTH
+        }),
+      }));
 
+    // mongodb-based session
+    } else if (config.SESSION_STORE == 'MongoStore'){
+
+      var MongoStore = require('connect-mongo')(session);
+
+      app.use(session({
+        resave: true,
+        saveUninitialized: true,
+        secret: config.SESSION_SECRET,
+        name: config.SESSION_NAME,
+        cookie: { maxAge: 86400 * 365 * 10 * 1000, path: '/' },
+        store: new MongoStore({
+          url: config.MONGODB_SESSION_URL,
+          autoReconnect: true
+        })
+      }));
+
+    }
 
     // passport authorization configuration
-
+    // ----------------------------------------------------
+    
     app.use(passport.initialize());
 
     app.use(passport.session());
