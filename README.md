@@ -125,7 +125,7 @@ This is an idea that the author has been exploring. Read the [special note about
 
 # Node Modules
 
-What happened in S/S 2016? Well the node_modules season was très mémorable in SF and in SV. Lots of blue, lots of feathers. Lots of dudes in their hoodies reluctantly entering ther 30s, needing to lose some pounds. React continued to stomp the scene, her heel finally ripped off Angular's ornate train. But Angular still hasn't given up. Not caring, the audience went gaga for Isomorphic (even if troubled and confused about the term). Combining React with Isomorphic was both risqué and inevitable, so that happened. Adding Bootstrap to the hot mix was welcoming a well-known cougar into the den. Etc. etc.
+The node_modules season of Spring/Summer 2016 was très mémorable in SF and in SV.
 
 ## Gulp
 
@@ -171,6 +171,15 @@ Note: Pete Hunt has deprecated petehunt/node-jsx in favor of [Meettya/node-jsx-b
 [twbs/bootstrap](https://github.com/twbs/bootstrap)
 
 [react-bootstrap v0.26.4](https://github.com/react-bootstrap/react-bootstrap/tree/v0.26.4)
+
+## Mongoose
+
+The application data model uses Mongoose to interact with MongoDB.
+
+[mongoose 3.8.34](https://github.com/Automattic/mongoose/tree/3.8.34)
+
+[mongodb 3.2](https://docs.mongodb.org/manual/)
+
 
 # Credit
 

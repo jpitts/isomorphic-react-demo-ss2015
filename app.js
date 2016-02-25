@@ -7,14 +7,15 @@
     APP_ENABLE_ISO
 */
 
-var express = require('express'),
-    path = require('path'),
-    bodyParser = require('body-parser'),
-    favicon = require('serve-favicon'),
-    methodOverride = require('method-override'),
-    multer = require('multer'),
-    errorHandler = require('errorhandler'),
-    AuthExpressConfig = require('./entities/auth/express_config.js')
+var express = require('express')
+  , path = require('path')
+  , bodyParser = require('body-parser')
+  , favicon = require('serve-favicon')
+  , methodOverride = require('method-override')
+  , multer = require('multer')
+  , errorHandler = require('errorhandler')
+  , AuthExpressConfig = require('./entities/auth/express_config.js')
+  , mongoose = require('mongoose')
 ;
 
 // JSX transpiler
@@ -51,6 +52,13 @@ try {
 
 } 
 
+// mongoose orm mongodb connection
+mongoose.connect(config.MONGODB_DATA_URL);
+mongoose.connection.on('error', function () {
+  console.log('Mongoose Connection Error: Please make sure that MongoDB is running.')
+  process.exit(1)
+})
+console.log('Service connected to MongoDB.')
 
 // app globals
 app.set('entities_dir', __dirname + '/entities');

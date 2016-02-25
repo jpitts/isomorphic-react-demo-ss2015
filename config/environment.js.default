@@ -1,5 +1,6 @@
 exports.config = {
   port: 8080,
+
   COOKIE_SECRET: 'demo',
   /*
   SESSION_STORE: 'RedisStore',
@@ -11,6 +12,10 @@ exports.config = {
     MONGODB_SESSION_URL: 'mongodb://localhost/',
   SESSION_SECRET: 'demo',
   SESSION_NAME: 'demo.sid',
+
+  DATA_STORE: 'mongoose',
+    MONGODB_DATA_URL: 'mongodb://localhost/',
+
   GOOGLE_CLIENT_ID: 'ENTER_CLIENT_ID',
   GOOGLE_CLIENT_SECRET: 'ENTER_CLIENT_SECRET',
   GOOGLE_REDIRECT_URL: 'http://localhost:8080/auth/redirect'

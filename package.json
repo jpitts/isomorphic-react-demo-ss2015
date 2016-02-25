@@ -49,6 +49,7 @@
         "morgan": "1.6.1",
         "urlize":"~0.2.1",
         "rapt-modelrizerly": "~0.2.1",
+        "mongoose":"3.8.x",
         "winston": "~1.0.2"
     },
     "keywords": [
