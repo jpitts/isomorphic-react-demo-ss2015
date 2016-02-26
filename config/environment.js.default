@@ -14,7 +14,7 @@ exports.config = {
   SESSION_NAME: 'demo.sid',
 
   DATA_STORE: 'mongoose',
-    MONGODB_DATA_URL: 'mongodb://localhost/',
+    MONGODB_DATA_URL: 'mongodb://localhost/iso_react_demo',
 
   GOOGLE_CLIENT_ID: 'ENTER_CLIENT_ID',
   GOOGLE_CLIENT_SECRET: 'ENTER_CLIENT_SECRET',

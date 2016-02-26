@@ -125,7 +125,7 @@ This is an idea that the author has been exploring. Read the [special note about
 
 # Node Modules
 
-The node_modules season of Spring/Summer 2016 was très mémorable in SF and in SV.
+The node_modules season of Spring/Summer 2015 was très mémorable in SF and in SV. Documentation for the specific versions used is listed below (where possible).
 
 ## Gulp
 

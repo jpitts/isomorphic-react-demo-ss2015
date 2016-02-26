@@ -58,6 +58,8 @@ module.exports = {
     
   set_user: function (req, res, next) {
     
+    // TODO: user needs to be set in the session
+    console.error('User.express_handler: user not yet being set in session');
     res.locals.user = req.user; 
     next();
 

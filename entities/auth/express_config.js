@@ -2,6 +2,7 @@ var cookieParser = require('cookie-parser')
   , session = require('express-session')
   , passport = require('passport')
   , GoogleStrategy = require('passport-google-oauth20').Strategy
+  , UserModel = require('../user/UserModel')
 ;
 
 module.exports = {
@@ -33,7 +34,8 @@ module.exports = {
     
     // redis-based session
     if (config.SESSION_STORE == 'RedisStore') {
-    
+
+      console.log('Auth.express_config: using RedisStore for sessions.'); 
       var RedisStore = require('connect-redis')(session);
 
       app.use(session({
@@ -52,6 +54,7 @@ module.exports = {
     // mongodb-based session
     } else if (config.SESSION_STORE == 'MongoStore'){
 
+      console.log('Auth.express_config: using connect-mongo for sessions.'); 
       var MongoStore = require('connect-mongo')(session);
 
       app.use(session({
@@ -81,13 +84,36 @@ module.exports = {
         callbackURL: config.GOOGLE_REDIRECT_URL
       },
       function(accessToken, refreshToken, profile, cb) {
-        console.log('google login with id=' + profile.id);
-        return cb(null, { googleId: profile.id });
-        /*
-        User.findOrCreate({ googleId: profile.id }, function (err, user) {
-          return cb(err, user);
+        console.log('Auth.express_config: google login with id=' + profile.id);
+        //return cb(null, { googleId: profile.id });
+        
+        // find or create
+        UserModel.findOne({ 'googleId': profile.id }, 'googleId', function (err, user) {
+          
+          // current user
+          if (user) {
+            return cb(err, user);
+          
+          // new user
+          } else {
+
+            // create a user
+            var newUser = new UserModel({ 
+              googleId: profile.id,
+              name: profile.displayName,
+              image_url: (profile.photos && profile.photos[0] ? profile.photos[0].value : undefined)
+            });
+            newUser.save(function (err, user) {
+              if (err) { console.error(err); }
+              return cb(err, user);
+            });
+
+          }
+
         });
-        */
+
+
+
       }
     ));
     

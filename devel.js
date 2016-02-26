@@ -43,7 +43,11 @@ var child = new (forever.Monitor)('app.js', {
   watch: true,
   watchIgnoreDotFiles: null,
   watchDirectory: './',
-  watchIgnorePatterns: ['public/js/isomorphic-react-demo-ss2015/client.js'] 
+  watchIgnorePatterns: [
+    'public/js/isomorphic-react-demo-ss2015/client.js',
+    'vendor/mongodb/**',
+    'vendor/redis/**'
+  ] 
 
 });
 
