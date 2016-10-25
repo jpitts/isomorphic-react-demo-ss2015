@@ -4,7 +4,7 @@ screen -t notes bash
 screen -t git bash
 screen -t bash bash
 screen -t config bash
-screen -t server bash
+screen -t system bash
 screen -t ent-app bash
 screen -t ent-auth bash
 screen -t ent-foyer bash
@@ -12,5 +12,10 @@ screen -t ent-workspace bash
 screen -t ent-user bash
 screen -t css bash
 screen -t bash bash
+screen -t svc-node bash
+screen -t svc-redis bash
+screen -t svc-mongodb bash
+screen -t bash bash
+screen -t mongo bash
 
 select 0

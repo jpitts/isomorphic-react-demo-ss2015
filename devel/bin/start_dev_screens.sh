@@ -69,6 +69,27 @@ eval $CMD
 CMD="screen -S $SCREENID -p11 -X stuff \$'\03 cd $DIR \015'"
 eval $CMD
 
+# node service
+CMD="screen -S $SCREENID -p12 -X stuff \$'\03 cd $DIR \015'"
+eval $CMD
+
+# redis service
+CMD="screen -S $SCREENID -p13 -X stuff \$'\03 cd $DIR/vendor/redis \015'"
+eval $CMD
+
+# mongodb service
+CMD="screen -S $SCREENID -p14 -X stuff \$'\03 cd $DIR/vendor/mongodb \015'"
+eval $CMD
+
+# bash
+CMD="screen -S $SCREENID -p15 -X stuff \$'\03 cd $DIR \015'"
+eval $CMD
+
+# mongo client
+CMD="screen -S $SCREENID -p16 -X stuff \$'\03 cd $DIR/vendor/mongodb \015'"
+eval $CMD
+
+
 # wrap up
 
 # leave a message in screen 0

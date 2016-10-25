@@ -45,25 +45,35 @@ One key configuration that is required in order to login is to set GOOGLE_CLIENT
 
 If it is run on a modern unix system, this demo contains all of what you need to edit code, to run mongodb and redis, and to run the web stack.
 
-## Edit Files:
+
+## Editing Files:
+
+Run the following shell script in order to start a screen session for developing on this code base:
 
 ```
 ./devel/bin/start_dev_screens.sh
 ```
 
-## Start Mongodb:
+To destroy the dev screen session (make sure files are closed):
+
+```
+./devel/bin/stop_dev_screens.sh
+```
+
+
+## Starting Mongodb:
 
 ```
 ./vendor/mongodb/bin/start-mongodb.sh
 ```
 
-## Start Redis:
+## Starting Redis:
 
 ```
 ./vendor/redis/bin/start-redis.sh
 ```
 
-## Start In Development Mode:
+## Starting In Development Mode:
 
 ```
 node devel.js
@@ -74,8 +84,15 @@ Note 1: Isomorphic mode is disabled by default in dev mode, allowing for React d
 Note 2: the files are being watched in order to rebuild client javascript and to restart the web service.
 
 
+## Manually Building
 
-## Start In Production Mode:
+```
+./devel/bin/build.sh
+```
+
+If you want more control instead of waiting for watched files to activate a client rebuild, you can manually rebuild. See the Gulpfile.js to see what happens during the build.
+
+## Starting In Production Mode:
 
 ```
 node app.js

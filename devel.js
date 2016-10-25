@@ -46,7 +46,8 @@ var child = new (forever.Monitor)('app.js', {
   watchIgnorePatterns: [
     'public/js/isomorphic-react-demo-ss2015/client.js',
     'vendor/mongodb/**',
-    'vendor/redis/**'
+    'vendor/redis/**',
+    'node_modules/**'
   ] 
 
 });

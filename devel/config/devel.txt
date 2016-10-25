@@ -8,16 +8,21 @@ Screens that have been set up for you:
 
 screen 0 notes
 screen 1 git
-screen 2 bash
+screen 2 
 screen 3 config
-screen 4 server
+screen 4 system
 screen 5 ent-app
 screen 6 ent-auth
 screen 7 ent-foyer
 screen 8 ent-workspace
 screen 9 ent-user
 screen 10 css
-screen 11 bash
+screen 11 
+screen 12 svc-node
+screen 13 svc-redis
+screen 14 svc-mongodb
+screen 15 
+screen 16 mongo
 
 For help navigating screen, look under "Window Management" in:
 http://aperiodic.net/screen/quick_reference

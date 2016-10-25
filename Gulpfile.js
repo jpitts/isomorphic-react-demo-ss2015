@@ -1,6 +1,8 @@
 var gulp       = require('gulp'),
     concat     = require('gulp-concat'),
-    browserify = require('gulp-browserify');
+    browserify = require('gulp-browserify')
+    debug      = require('gulp-debug')
+;
 
 var paths = {
   jsx: ['components/**/react/*.jsx'],
@@ -10,12 +12,14 @@ var paths = {
 gulp.task('client_scripts', function () {
 
   gulp.src([
-      'components/auth/client.js',
-      'components/foyer/client.js',
-      'components/workspace/client.js',
-      'components/user/client.js',
+      'entities/auth/client.js',
+      'entities/foyer/client.js',
+      'entities/workspace/client.js',
+      'entities/user/client.js',
     ])
+    //.pipe(debug({title: 'debug:'}))
     .pipe(concat('client.js'))
+    //.pipe(debug({title: 'debug:'}))
     .pipe(browserify({
       debug: true,
       transform: [ 'reactify' ]

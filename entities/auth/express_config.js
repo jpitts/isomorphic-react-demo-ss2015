@@ -1,7 +1,11 @@
 var cookieParser = require('cookie-parser')
   , session = require('express-session')
   , passport = require('passport')
+  //, AnonStrategy = require('passport-anonymous').Strategy
   , GoogleStrategy = require('passport-google-oauth20').Strategy
+  , GithubStrategy = require('passport-github').Strategy
+  , LocalStrategy = require('passport-local').Strategy
+  , TwitterStrategy = require('passport-twitter').Strategy
   , UserModel = require('../user/UserModel')
 ;
 
@@ -78,6 +82,10 @@ module.exports = {
 
     app.use(passport.session());
 
+    // anon strategy
+    //passport.use(new AnonStrategy());
+    
+    // google strategy
     passport.use(new GoogleStrategy({
         clientID: config.GOOGLE_CLIENT_ID,
         clientSecret: config.GOOGLE_CLIENT_SECRET,
@@ -110,13 +118,52 @@ module.exports = {
 
           }
 
+        }); // END find User
+      }
+    )); // END google strategy
+ 
+ 
+    // local strategy 
+    passport.use(new LocalStrategy(
+      function(username, password, cb) {
+
+        console.log('Auth.express_config: local login with username ' + username);
+        
+        // find or create
+        UserModel.findOne({ 'localId': username }, 'localId', function (err, user) {
+          
+          // current user
+          if (user) {
+            return cb(err, user);
+          
+          // new user
+          } else {
+
+            // create a user
+            var newUser = new UserModel({ 
+              localId: username,
+              name: username,
+              password: Math.floor(100000000 + Math.random() * 900000000) // 9 digit random number
+            });
+            newUser.save(function (err, user) {
+              if (err) { console.error(err); }
+              return cb(err, user);
+            });
+
+          }
+
+        }); // END find User
+
+
+        User.findOne({ username: username }, function (err, user) {
+          if (err) { return cb(err); }
+          if (!user) { return cb(null, false); }
+          if (!user.verifyPassword(password)) { return cb(null, false); }
+          return cb(null, user);
         });
-
-
-
       }
     ));
-    
+
     passport.serializeUser(function(user, done) { 
       done(null, user); 
     });

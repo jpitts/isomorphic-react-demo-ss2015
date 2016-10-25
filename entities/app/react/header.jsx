@@ -12,6 +12,7 @@ var React = require('react/addons'),
     Nav = require('react-bootstrap').Nav,
     NavBrand = require('react-bootstrap').NavBrand,
     NavItem = require('react-bootstrap').NavItem
+    MenuItem = require('react-bootstrap').MenuItem
 ;
 
 var ReactComponent = React.createClass({
@@ -28,9 +29,20 @@ var ReactComponent = React.createClass({
    
     var authJsx;
     if (thisComponent.props.user) {
-      authJsx=<NavItem eventKey={1} href="/auth/logout">Log Out</NavItem>;
+      authJsx=(
+        <Nav pullRight>
+          <NavItem eventKey={1} href="/auth/logout">Log Out</NavItem>
+        </Nav>
+      );
+
     } else {
-      authJsx=<NavItem eventKey={1} href="/auth/authenticate">Login with Google</NavItem>;
+      authJsx=(
+        <Nav pullRight> 
+          <MenuItem>Log In With:</MenuItem>
+          <NavItem eventKey={1} href="/auth/authenticate-google">Google</NavItem>
+        </Nav>
+      );
+
     }
 
     return (
@@ -39,9 +51,7 @@ var ReactComponent = React.createClass({
           <NavBrand>
             <a href="/">Isomorphic React Demo</a>
           </NavBrand>
-          <Nav pullRight>
-            {authJsx}
-          </Nav>
+          {authJsx}
         </Navbar>
       </div>
     );
