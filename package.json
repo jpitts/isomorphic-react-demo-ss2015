@@ -60,7 +60,7 @@
     "keywords": [
     ],
     "devDependencies": {
-        "browserify": "~4.0.0",
+        "browserify": "~4.2.3",
         "gulp": "~3.8.9",
         "gulp-debug":"~2.1.2",
         "gulp-browserify": "~0.5.0",
